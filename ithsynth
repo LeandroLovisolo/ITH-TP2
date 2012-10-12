@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + "/synth/synth"
+
+def show_help
+	puts ""
+	puts "ITHSynth - A voice synthesizer for L, an educational artificial language."
+	puts ""
+	puts "This project was created as an assignment for a Speech Technologies class by the"
+	puts "Computer Science department at Universidad de Buenos Aires. More details here:"
+	puts "http://www.glyc.dc.uba.ar/agustin/ith-2012."
+	puts ""
+	puts "Usage: #{$0} <output file> <text>"
+	puts ""
+	puts "Arguments:"
+	puts "  <output file>     Wave file (.wav) where the generated audio will be stored."
+	puts "  <text>            Text to synthetize."
+	puts ""
+	puts "Language rules:"
+	puts ""
+	puts "An expression in the L language is composed of the following syllables:"
+	puts "  ka la ma pa sa kA lA mA pA sA"
+	puts "Any combination of the syllables above is a valid L expression."
+	puts "The whitespace character can be used as a pause between words."
+	puts ""
+	puts "A few examples:"
+	puts ""
+	puts "#{$0} output.wav kAsa"
+	puts "#{$0} output.wav mamA papA"
+	puts "#{$0} output.wav sakA la kAka mamA"
+end
+
+if ARGV.length < 2
+	puts "Wrong number of arguments."
+	show_help
+else
+	if not Synth.synthesize(ARGV[1..-1].join(" "), ARGV[0])
+		puts "Invalid text input. See the language rules below."
+		show_help
+	else
+		puts "Done."
+	end
+end

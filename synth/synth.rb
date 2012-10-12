@@ -3,7 +3,7 @@ require 'wavefile'
 class Synth
 	include WaveFile
 
-	def synthetize(text, output_file)
+	def self.synthesize(text, output_file)
 		return false if not validate(text)
 		diphones = text_to_diphones(text.strip)
 		diphones = diphones.map { |d| File.dirname(__FILE__) + "/diphones/#{d}.wav"}
@@ -12,13 +12,13 @@ class Synth
 	end
 
 	private
-		def validate(text)
-			text = text.clone
+		def self.validate(text)
+			text = text.dup
 			%w{ka kA la lA ma mA pa pA sa sA \ }.each { |s| text.gsub! s, "" }
 			text.strip.length == 0
 		end
 
-		def text_to_diphones(text)
+		def self.text_to_diphones(text)
 			diphones = []
 			i = 0
 			while i < text.length
@@ -39,7 +39,7 @@ class Synth
 			diphones
 		end
 
-		def append_wav_files(dst, wavs)
+		def self.append_wav_files(dst, wavs)
 			Writer.new(dst, Format.new(:stereo, 16, 44100)) do |writer|
 			  wavs.each do |file_name|
 			    Reader.new(file_name).each_buffer(4096) do |buffer|
