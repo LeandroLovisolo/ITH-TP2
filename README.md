@@ -1,15 +1,15 @@
 ITH-TP2
 =======
 
-Introducción a las Tecnologías del Habla
+Introducción a las Tecnologías del Habla  
 Trabajo Práctico 2: Síntesis Concatenativa
 
-Departamento de Computación
-Facultad de Ciencias Exactas y Naturales
+Departamento de Computación  
+Facultad de Ciencias Exactas y Naturales  
 Universidad de Buenos Aires
 
-Alumno: Leandro Lovisolo
-Email: leandro@leandro.me
+Alumno: Leandro Lovisolo  
+Email: leandro@leandro.me  
 LU: 645/11
 
 ## ITHSynth ##
