@@ -16,6 +16,8 @@ LU: 645/11
 
 A voice synthesizer for L, an educational artificial language.
 
+http://github.com/LeandroLovisolo/ITH-TP2
+
 This project was created as an assignment for a Speech Technologies class by the
 Computer Science department at Universidad de Buenos Aires. More details here:
 http://www.glyc.dc.uba.ar/agustin/ith-2012.
