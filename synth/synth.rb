@@ -1,4 +1,7 @@
-require 'wavefile'
+require "rubygems"
+require "bundler/setup"
+
+require "wavefile"
 
 class Synth
 	include WaveFile
